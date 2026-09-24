@@ -1,0 +1,6 @@
+{
+  "name": "SIMULADOR SST 360 - Cacería de Peligros",
+  "description": "Simulador 3D interactivo en primera persona para inspección de seguridad y salud en el trabajo (SST) en una nave industrial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

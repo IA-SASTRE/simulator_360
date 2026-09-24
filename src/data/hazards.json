@@ -1,0 +1,834 @@
+[
+  {
+    "id": "PEL-001",
+    "nombre": "Extintor obstruido por tarimas",
+    "categoria": "Incendio",
+    "descripcion": "Estiba de cajas y tarimas de madera bloquea por completo el acceso al extintor PQS de 9kg ubicado en la columna estructural.",
+    "gravedad": "Alta",
+    "probabilidad": "Media",
+    "puntos": 10,
+    "zonaId": "Z2",
+    "zonaNombre": "Racks de Almacenamiento",
+    "normativa": "NOM-002-STPS-2010 / NFPA 10",
+    "position": [-12, 1.2, -6],
+    "interactionRadius": 3.2,
+    "meshType": "extinguisher_blocked",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Cuál es la condición insegura detectada en este punto de protección contra incendios?",
+      "opciones": [
+        "El extintor carece de manómetro de presión",
+        "El extintor se encuentra físicamente obstruido por material almacenado",
+        "El extintor está montado a una altura superior a 1.80 metros",
+        "No existe condición insegura en el extintor"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Incendio",
+    "preguntaControl": {
+      "pregunta": "¿Cuál es la medida de control jerárquica prioritaria para corregir esta condición?",
+      "opciones": [
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Despejar inmediatamente el radio de 1 metro frente al extintor y delimitar la zona en el piso con franjas amarillas",
+          "esOptima": true,
+          "justificacion": "Garantiza acceso inmediato y visibilidad sin demoras en caso de conato de incendio."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Dotar a los estibadores con guantes de descarne para mover las cajas si hay fuego",
+          "esOptima": false,
+          "justificacion": "El EPP no resuelve la demora crítica durante una emergencia."
+        },
+        {
+          "tipo": "Sustitución",
+          "texto": "Cambiar el extintor de polvo químico seco por uno de agua a presión",
+          "esOptima": false,
+          "justificacion": "El tipo de agente extintor no resuelve el bloqueo físico."
+        }
+      ]
+    },
+    "consecuencia": "Retraso crítico en el combate inicial de un conato de incendio, permitiendo su propagación descontrolada.",
+    "medidaPreventiva": "Mantener permanentemente despejada y señalizada un área libre de al menos 1 metro alrededor de todo equipo contra incendio.",
+    "retroalimentacion": "La NOM-002-STPS y NFPA 10 exigen que todos los extintores sean visibles, de fácil acceso y libres de cualquier obstáculo."
+  },
+  {
+    "id": "PEL-002",
+    "nombre": "Derrame de aceite lubricante en pasillo peatonal",
+    "categoria": "Locativo",
+    "descripcion": "Charco de fluido aceitoso sobre el piso de concreto pulido en la intersección de paso peatonal de la zona de maquinaria.",
+    "gravedad": "Media",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z4",
+    "zonaNombre": "Área de Maquinaria",
+    "normativa": "NOM-001-STPS-2008 / OSHA 1910.22",
+    "position": [4, 0.05, 5],
+    "interactionRadius": 3.0,
+    "meshType": "fluid_spill",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué peligro inmediato presenta el suelo en esta área de tránsito?",
+      "opciones": [
+        "Falta de sellador acrílico superficial",
+        "Derrame de lubricante con alto coeficiente de resbalamiento",
+        "Deformación estructural de la losa de concreto",
+        "Piso dentro de parámetros seguros"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Locativo",
+    "preguntaControl": {
+      "pregunta": "¿Qué acción de control inmediato y definitivo debe aplicarse?",
+      "opciones": [
+        {
+          "tipo": "Eliminación",
+          "texto": "Colocar material absorbente granulado/almohadillas, limpiar el residuo y reparar la fuga de origen en la máquina",
+          "esOptima": true,
+          "justificacion": "Elimina el riesgo de caída al mismo nivel y corta la causa raíz de la fuga."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Poner un cono amarillo y esperar a que el lubricante se seque solo",
+          "esOptima": false,
+          "justificacion": "Los lubricantes industriales no se evaporan y el riesgo persiste activo."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Exigir botas de goma a todos los que crucen el charco",
+          "esOptima": false,
+          "justificacion": "No elimina el factor de resbalamiento ni la dispersión del contaminante."
+        }
+      ]
+    },
+    "consecuencia": "Caídas al mismo nivel con traumatismos osteomusculares, fracturas o contacto con piezas móviles.",
+    "medidaPreventiva": "Aplicar kit antiderrames, depositar en contenedor de residuos peligrosos e inspeccionar sellos mecánicos.",
+    "retroalimentacion": "Los pisos deben conservarse limpios y libres de sustancias resbalosas conforme a la NOM-001-STPS."
+  },
+  {
+    "id": "PEL-003",
+    "nombre": "Cable eléctrico con aislamiento desgastado y conductores expuestos",
+    "categoria": "Eléctrico",
+    "descripcion": "Cable de alimentación industrial con la cubierta rasgada y cables de cobre vivos expuestos junto a la estructura metálica del rack.",
+    "gravedad": "Crítica",
+    "probabilidad": "Media",
+    "puntos": 10,
+    "zonaId": "Z5",
+    "zonaNombre": "Área Eléctrica",
+    "normativa": "NOM-029-STPS-2011 / NFPA 70E",
+    "position": [-8, 0.8, -14],
+    "interactionRadius": 2.8,
+    "meshType": "damaged_cable",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué defecto crítico presenta este cableado de fuerza?",
+      "opciones": [
+        "Aislamiento térmico insuficiente",
+        "Aislamiento roto con conductores energizados expuestos al contacto",
+        "Exceso de longitud enrollada en el piso",
+        "Falta de etiquetado de fase secundaria"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Eléctrico",
+    "preguntaControl": {
+      "pregunta": "¿Cuál es la medida de control correcta ante este conductor dañado?",
+      "opciones": [
+        {
+          "tipo": "Eliminación",
+          "texto": "Desenergizar el circuito mediante LOTO, retirar el conductor dañado y reemplazarlo por cableado nuevo certificado",
+          "esOptima": true,
+          "justificacion": "Elimina el peligro de electrocución y arco eléctrico en su totalidad."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Envolver provisionalmente los hilos expuestos con cinta de enmascarar o cinta de empaque",
+          "esOptima": false,
+          "justificacion": "Las cintas no dieléctricas provocan incendios y fallas catastróficas."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Instruir a los operadores a no tocar el cable con manos desnudas",
+          "esOptima": false,
+          "justificacion": "El riesgo de contacto accidental o cortocircuito contra el rack metálico sigue presente."
+        }
+      ]
+    },
+    "consecuencia": "Choque eléctrico fatal, fibrilación ventricular, quemaduras por arco y posible incendio en la nave.",
+    "medidaPreventiva": "Reemplazo inmediato por personal electricista calificado y canalización en tubería conduit metálica.",
+    "retroalimentacion": "Todo conductor con daño al aislamiento debe ser retirado de servicio de inmediato bajo procedimiento de bloqueo de energía."
+  },
+  {
+    "id": "PEL-004",
+    "nombre": "Cable temporal atravesando pasillo de circulación",
+    "categoria": "Locativo",
+    "descripcion": "Extensión eléctrica flexible tendida suelta a ras de suelo a través de la vía de paso de peatones y carretillas.",
+    "gravedad": "Media",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z1",
+    "zonaNombre": "Recepción de Materiales",
+    "normativa": "NOM-001-STPS-2008 / OSHA 1910.305",
+    "position": [6, 0.05, -7],
+    "interactionRadius": 3.0,
+    "meshType": "cable_crossing",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué anomalía presenta el tendido de esta alimentación temporal?",
+      "opciones": [
+        "Cable con calibre excesivo para la carga",
+        "Cable tendido suelto cruzando una vía de tránsito peatonal generando riesgo de tropiezo",
+        "Falta de clavija con doble espiga polarizada",
+        "Conexión eléctrica reglamentaria"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Locativo",
+    "preguntaControl": {
+      "pregunta": "¿Qué medida de control jerárquica debe implementarse?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Canalizar el cableado por vía aérea o protegerlo mediante un pasacables industrial de alta resistencia con rampa chanfleada",
+          "esOptima": true,
+          "justificacion": "Elimina el obstáculo de tropiezo y protege el cable del aplastamiento."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Pegar una hoja de advertencia en la pared contigua",
+          "esOptima": false,
+          "justificacion": "No previene que las ruedas de carretillas o pies se traben con el cable."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Pedir que caminen levantando los pies al cruzar",
+          "esOptima": false,
+          "justificacion": "No es una barrera técnica confiable ni válida en SST."
+        }
+      ]
+    },
+    "consecuencia": "Caídas al mismo nivel por tropiezo y daño mecánico al cable provocando chispas o cortocircuito.",
+    "medidaPreventiva": "Instalación de tomas fijas cercanas o canalización elevada / pasa-cables certificado.",
+    "retroalimentacion": "Las extensiones temporales no deben cruzar zonas peatonales sin protección mecánica adecuada."
+  },
+  {
+    "id": "PEL-005",
+    "nombre": "Salida de emergencia bloqueada por mercancía",
+    "categoria": "Incendio",
+    "descripcion": "Puerta de evacuación con barra antipánico completamente bloqueada por tarimas cargadas con cajas de cartón.",
+    "gravedad": "Crítica",
+    "probabilidad": "Media",
+    "puntos": 10,
+    "zonaId": "Z7",
+    "zonaNombre": "Ruta de Evacuación",
+    "normativa": "NOM-002-STPS-2010 / NFPA 101",
+    "position": [18.8, 1.5, 4],
+    "interactionRadius": 3.5,
+    "meshType": "blocked_exit",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Cuál es la gravedad de la condición en esta puerta con rótulo de salida?",
+      "opciones": [
+        "La barra antipánico requiere pintura de contraste",
+        "La puerta de evacuación y ruta de escape están físicamente obstruidas por mercancía",
+        "Falta un extintor adyacente a la puerta",
+        "Es un almacenamiento temporal permitido"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Incendio",
+    "preguntaControl": {
+      "pregunta": "¿Qué control debe implementarse de forma obligatoria?",
+      "opciones": [
+        {
+          "tipo": "Eliminación",
+          "texto": "Reubicar las tarimas al almacén y mantener el ancho total de la ruta de evacuación libre de todo obstáculo",
+          "esOptima": true,
+          "justificacion": "Restaura la capacidad de escape continuo y sin obstáculos hacia el punto de reunión."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Colocar un letrero indicando que en caso de alarma se muevan las cajas",
+          "esOptima": false,
+          "justificacion": "Durante una emergencia con humo el pánico impide mover cargas pesadas."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Asignar chalecos reflectantes a los brigadistas de evacuación",
+          "esOptima": false,
+          "justificacion": "No desbloquea el medio de escape físico requerido por ley."
+        }
+      ]
+    },
+    "consecuencia": "Atrapamiento de personal, asfixia por inhalación de humo y aplastamiento masivo en caso de evacuación.",
+    "medidaPreventiva": "Mantener despejada la ruta y capacitar a montacarguistas sobre la prohibición absoluta de estacionar frente a salidas.",
+    "retroalimentacion": "Las salidas de emergencia deben operar libremente hacia el exterior sin llave ni obstrucción según NOM-002-STPS."
+  },
+  {
+    "id": "PEL-006",
+    "nombre": "Estiba inestable en rack a tercer nivel",
+    "categoria": "Locativo",
+    "descripcion": "Tarima con cajas inclinadas y fleje roto a 4.5 metros de altura en el rack principal, en riesgo inminente de desplome.",
+    "gravedad": "Alta",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z2",
+    "zonaNombre": "Racks de Almacenamiento",
+    "normativa": "NOM-006-STPS-2014 / OSHA 1910.176",
+    "position": [-5, 3.8, 8],
+    "interactionRadius": 3.8,
+    "meshType": "unstable_pallet",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué anomalía de estiba se observa en la parte superior del rack?",
+      "opciones": [
+        "Color inadecuado de las cajas de cartón",
+        "Carga desalineada, con fleje roto y riesgo inminente de caída de objetos",
+        "Sobrepeso volumétrico en base a la norma de etiquetado",
+        "Estiba dentro del estándar de apilamiento"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Locativo",
+    "preguntaControl": {
+      "pregunta": "¿Cuál es la intervención de seguridad adecuada para esta estiba?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Delimitar el perímetro inferior, bajar la tarima con montacargas mediante operador calificado y re-estibar/flejar a nivel de piso",
+          "esOptima": true,
+          "justificacion": "Controla la zona de caída y resuelve el centro de gravedad inestable de la carga."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Empujar las cajas con una vara larga desde el suelo",
+          "esOptima": false,
+          "justificacion": "Acción temeraria de alto riesgo que detonaría el desplome sobre el trabajador."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Que los peatones usen casco y crucen rápido bajo la estiba",
+          "esOptima": false,
+          "justificacion": "El casco industrial clase G no resiste el impacto de 200kg cayendo desde 4.5 metros."
+        }
+      ]
+    },
+    "consecuencia": "Aplastamiento fatal o lesiones encefálicas graves por caída de materiales pesados.",
+    "medidaPreventiva": "Inspección de tarimas antes del izado, uso de envolvedora stretch film y mantenimiento de verticalidad.",
+    "retroalimentacion": "Las cargas en racks deben ser estables, flejadas y con capacidad portante verificada según NOM-006-STPS."
+  },
+  {
+    "id": "PEL-007",
+    "nombre": "Material pesado almacenado a altura sin retención trasera",
+    "categoria": "Locativo",
+    "descripcion": "Tambores metálicos pesados colocados en la orilla del larguero superior sin malla anticaída ni tope de seguridad posterior.",
+    "gravedad": "Alta",
+    "probabilidad": "Media",
+    "puntos": 10,
+    "zonaId": "Z2",
+    "zonaNombre": "Racks de Almacenamiento",
+    "normativa": "NOM-006-STPS-2014",
+    "position": [-9, 3.6, 2],
+    "interactionRadius": 3.6,
+    "meshType": "high_storage_hazard",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Cuál es la deficiencia en el almacenamiento de estos tambores en altura?",
+      "opciones": [
+        "Falta de etiqueta de código de barras",
+        "Almacenamiento de elementos cilíndricos pesados en altura sin sistema de bloqueo o malla perimetral anticaídas",
+        "Falta de pintura epóxica en el larguero",
+        "No existe riesgo locativo"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Locativo",
+    "preguntaControl": {
+      "pregunta": "¿Qué medida de control jerárquica previene el desprendimiento de estas cargas?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Instalar mallas de seguridad anticaídas posteriores y almacenar tambores preferentemente en niveles inferiores sobre racks especiales",
+          "esOptima": true,
+          "justificacion": "Evita mecánicamente el empuje hacia el pasillo trasero y reduce la energía potencial del almacenamiento."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Revisar una vez por mes el inventario de los tambores",
+          "esOptima": false,
+          "justificacion": "No contiene la carga ante un impacto accidental de uña de montacargas."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Chaleco de alta visibilidad para el montacarguista",
+          "esOptima": false,
+          "justificacion": "No previene la caída de objetos desprendidos."
+        }
+      ]
+    },
+    "consecuencia": "Caída de bultos pesados sobre pasillos de maniobra causando traumatismos severos a transeúntes.",
+    "medidaPreventiva": "Configuración de racks con topes traseros y ubicación de cargas de gran masa en niveles bajos.",
+    "retroalimentacion": "El almacenamiento en altura debe contar con elementos estructurales que impidan el desprendimiento accidental."
+  },
+  {
+    "id": "PEL-008",
+    "nombre": "Trabajador realizando labores sin casco de seguridad",
+    "categoria": "Equipo de Protección Personal",
+    "descripcion": "Operario manipulando tarimas y operando en zona de racks con movimiento de carga vertical sin portar casco de protección.",
+    "gravedad": "Alta",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z2",
+    "zonaNombre": "Racks de Almacenamiento",
+    "normativa": "NOM-017-STPS-2008 / ANSI Z89.1",
+    "position": [-3, 0.9, -4],
+    "interactionRadius": 2.8,
+    "meshType": "worker_no_helmet",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué omisión en su equipo de protección personal presenta este operario en zona de maniobras?",
+      "opciones": [
+        "Falta de guantes de carnaza tipo soldador",
+        "Ausencia de casco de seguridad industrial con barbiquejo en zona de posible caída de objetos",
+        "Calzado con suela de cuero convencional",
+        "Porta uniforme completo"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Equipo de Protección Personal",
+    "preguntaControl": {
+      "pregunta": "¿Cómo debe garantizarse el cumplimiento del uso de casco?",
+      "opciones": [
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Detener la actividad inmediatamente, proveer el casco dieléctrico certificado y reforzar la supervisión de campo con charla de 5 minutos",
+          "esOptima": true,
+          "justificacion": "Asegura la protección inmediata y crea consciencia en el trabajador."
+        },
+        {
+          "tipo": "Eliminación",
+          "texto": "Eliminar la presencia de trabajadores en toda la nave de almacén",
+          "esOptima": false,
+          "justificacion": "Inviable operativamente; la solución es la dotación y uso estricto del EPP reglamentario."
+        },
+        {
+          "tipo": "Sustitución",
+          "texto": "Permitir el uso de gorra textil deportiva",
+          "esOptima": false,
+          "justificacion": "No ofrece atenuación de impacto mecánico ni protección craneal."
+        }
+      ]
+    },
+    "consecuencia": "Traumatismo craneoencefálico, conmoción o laceración severa ante impacto de herramientas o piezas.",
+    "medidaPreventiva": "Obligatoriedad de uso de EPP básico en todas las zonas operativas de la planta señalizadas.",
+    "retroalimentacion": "La NOM-017-STPS establece que el patrón debe proveer el EPP adecuado y el trabajador debe utilizarlo permanentemente en zonas de riesgo."
+  },
+  {
+    "id": "PEL-009",
+    "nombre": "Operario puliendo piezas metálicas sin protección ocular",
+    "categoria": "Equipo de Protección Personal",
+    "descripcion": "Trabajador utilizando herramienta abrasiva generando chispas y esquirlas incandescentes sin gafas de seguridad ni careta facial.",
+    "gravedad": "Alta",
+    "probabilidad": "Crítica",
+    "puntos": 10,
+    "zonaId": "Z4",
+    "zonaNombre": "Área de Maquinaria",
+    "normativa": "NOM-017-STPS-2008 / ANSI Z87.1",
+    "position": [7, 0.9, 8],
+    "interactionRadius": 2.8,
+    "meshType": "worker_no_goggles",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué condición de peligro compromete los ojos de este trabajador?",
+      "opciones": [
+        "Uso de gafas oscuras en interiores",
+        "Operación de esmerilado/corte sin lentes de seguridad ni pantalla de protección facial contra proyección de partículas",
+        "Falta de gorro cofia de tela",
+        "Trabaja bajo normas de seguridad"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Equipo de Protección Personal",
+    "preguntaControl": {
+      "pregunta": "¿Cuál es la medida de control adecuada para operaciones de amolado/desbaste?",
+      "opciones": [
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Uso obligatorio de gafas de seguridad herméticas de policarbonato complementadas con pantalla facial de protección y mampara de confinamiento",
+          "esOptima": true,
+          "justificacion": "Protege integralmente ojos y rostro contra esquirlas a alta velocidad."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Cerrar los ojos periódicamente mientras se aplica el disco sobre la pieza",
+          "esOptima": false,
+          "justificacion": "Práctica insegura que aumenta drásticamente el riesgo de desvío y atrapamiento."
+        },
+        {
+          "tipo": "Sustitución",
+          "texto": "Reemplazar el metal por piezas plásticas",
+          "esOptima": false,
+          "justificacion": "No corresponde a las especificaciones del proceso productivo."
+        }
+      ]
+    },
+    "consecuencia": "Cuerpo extraño intraocular, úlcera corneal, perforación del globo ocular y pérdida irreversible de la visión.",
+    "medidaPreventiva": "Uso mandatorio de EPP visual certificado con resistencia a impactos de alta energía (Z87+).",
+    "retroalimentacion": "Todo trabajo en caliente o generación de partículas volantes requiere protección visual y facial inmediata."
+  },
+  {
+    "id": "PEL-010",
+    "nombre": "Trabajador levantando carga con técnica ergonómica incorrecta",
+    "categoria": "Ergonómico",
+    "descripcion": "Operario levantando una caja de 28kg flexionando la columna lumbar con piernas rectas y carga alejada del torso.",
+    "gravedad": "Media",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z1",
+    "zonaNombre": "Recepción de Materiales",
+    "normativa": "NOM-036-1-STPS-2018",
+    "position": [9, 0.8, -3],
+    "interactionRadius": 2.8,
+    "meshType": "worker_bad_posture",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué factor de riesgo ergonómico se detecta en la maniobra de carga manual?",
+      "opciones": [
+        "Levantamiento doblando la espalda sin flexionar rodillas y peso que excede la capacidad individual recomendada",
+        "Uso de botas con casquillo de acero",
+        "Caja con dimensiones reducidas",
+        "Postura ergonómica correcta"
+      ],
+      "respuestaCorrecta": 0
+    },
+    "tipoRiesgoCorrecto": "Ergonómico",
+    "preguntaControl": {
+      "pregunta": "¿Qué combinación de controles disminuye el riesgo de lesión osteomuscular?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Utilizar patín hidráulico o mesa elevadora pantográfica, o solicitar apoyo para levantamiento en equipo (>25kg)",
+          "esOptima": true,
+          "justificacion": "Reduce la sobrecarga mecánica sobre los discos intervertebrales lumbares."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Obligar al uso de faja lumbar elástica como única medida",
+          "esOptima": false,
+          "justificacion": "La ciencia médica y NIOSH han demostrado que las fajas no previenen lesiones de espalda."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Decirle que levante el doble de rápido para terminar antes",
+          "esOptima": false,
+          "justificacion": "Multiplica las fuerzas dinámicas de cizalla sobre la columna."
+        }
+      ]
+    },
+    "consecuencia": "Lumbalgia crónica, hernia discal, desgarros musculares e incapacidad laboral prolongada.",
+    "medidaPreventiva": "Capacitación en higiene postural, límites de masa máxima permitida y empleo de ayudas mecánicas.",
+    "retroalimentacion": "La NOM-036-1-STPS limita la masa máxima manual a 25 kg para hombres adultos y exige doblar rodillas y aproximar la carga."
+  },
+  {
+    "id": "PEL-011",
+    "nombre": "Montacargas en movimiento en proximidad inmediata de peatones",
+    "categoria": "Vehicular",
+    "descripcion": "Montacargas de 3 toneladas maniobrando a velocidad en zona peatonal sin guardar la distancia mínima de seguridad de 2.5 metros.",
+    "gravedad": "Crítica",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z3",
+    "zonaNombre": "Circulación de Montacargas",
+    "normativa": "NOM-006-STPS-2014 / OSHA 1910.178",
+    "position": [-1, 1.2, 0],
+    "interactionRadius": 3.6,
+    "meshType": "forklift_near_pedestrians",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué peligro grave de interacción hombre-máquina se suscita en este pasillo?",
+      "opciones": [
+        "El montacargas tiene las llantas limpias",
+        "Coexistencia riesgosa de equipo móvil con peatones sin distancia de seguridad ni contacto visual establecido",
+        "El montacargas circula a menos de 5 km/h",
+        "Operación de maniobra regulada"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Vehicular",
+    "preguntaControl": {
+      "pregunta": "¿Cuál es la medida de control jerárquica para eliminar el riesgo de atropello?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Segregar físicamente el tránsito con barreras perimetrales metálicas fijas y paso peatonal con sensor de proximidad 'Blue Spot'",
+          "esOptima": true,
+          "justificacion": "Separa físicamente el flujo de personas del flujo vehicular evitando impactos mecánicos."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Pedirle al chofer que toque la bocina continuamente durante todo su turno",
+          "esOptima": false,
+          "justificacion": "Genera contaminación acústica, insensibiliza a los trabajadores y no previene puntos ciegos."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Confiar en que el chaleco fluorescente detendrá al montacargas",
+          "esOptima": false,
+          "justificacion": "El chaleco mejora la visibilidad pero no frena un equipo de 3 toneladas en movimiento."
+        }
+      ]
+    },
+    "consecuencia": "Arrollamiento, fracturas por aplastamiento de extremidades o desenlace fatal.",
+    "medidaPreventiva": "Segregación física de pasillos peatonales y de montacargas, límites de velocidad a 10 km/h y luz perimetral azul.",
+    "retroalimentacion": "El tránsito de montacargas debe estar rigurosamente demarcado y separado de las vías peatonales conforme a NOM-006-STPS."
+  },
+  {
+    "id": "PEL-012",
+    "nombre": "Falta de segregación entre vías peatonales y montacargas",
+    "categoria": "Vehicular",
+    "descripcion": "Zona compartida sin pintura de delimitación en piso, sin señalización horizontal ni barandales de contención en curva ciega.",
+    "gravedad": "Alta",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z3",
+    "zonaNombre": "Circulación de Montacargas",
+    "normativa": "NOM-026-STPS-2008 / NOM-001-STPS-2008",
+    "position": [2, 0.05, -5],
+    "interactionRadius": 3.4,
+    "meshType": "no_segregation_zone",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué carencia de infraestructura vial industrial se aprecia en este crucero?",
+      "opciones": [
+        "Falta de piso antifatiga de hule",
+        "Ausencia de delimitación visual y física entre el carril vehicular y el corredor peatonal seguro",
+        "Sobreiluminación cenital",
+        "Crucero con señalización óptima"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Vehicular",
+    "preguntaControl": {
+      "pregunta": "¿Qué control de ingeniería y administrativo debe implementarse de inmediato?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Pintar franjas amarillas de 10 cm con paso peatonal tipo cebra, instalar bolardos o barandal de acero y espejo convexo en esquina ciega",
+          "esOptima": true,
+          "justificacion": "Establece canales visuales y físicos obligatorios de circulación con visibilidad para ambas partes."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Confiar en el sentido común de cada trabajador para adivinar las trayectorias",
+          "esOptima": false,
+          "justificacion": "El factor humano sin controles de diseño es la principal causa de colisiones."
+        },
+        {
+          "tipo": "Sustitución",
+          "texto": "Sustituir el montacargas por carretillas manuales de empuje para toda la planta",
+          "esOptima": false,
+          "justificacion": "No es viable para cargas de gran tonelaje e incrementa fatiga ergonómica."
+        }
+      ]
+    },
+    "consecuencia": "Colisión frontal o lateral entre peatón y montacargas en zonas de giro ciego.",
+    "medidaPreventiva": "Pintura termoplástica amarilla tránsito (NOM-026-STPS), defensas metálicas y espejos parabólicos.",
+    "retroalimentacion": "Las vías de circulación peatonal deben estar claramente delimitadas de las vehiculares de acuerdo a las normas oficiales."
+  },
+  {
+    "id": "PEL-013",
+    "nombre": "Tablero de distribución eléctrica obstruido por tambos y pallets",
+    "categoria": "Eléctrico",
+    "descripcion": "Gabinete principal de interruptores termo-magnéticos de 440V bloqueado por tambos vacíos y tarimas, impidiendo el corte de energía de emergencia.",
+    "gravedad": "Alta",
+    "probabilidad": "Media",
+    "puntos": 10,
+    "zonaId": "Z5",
+    "zonaNombre": "Área Eléctrica",
+    "normativa": "NOM-029-STPS-2011 / NEC 110.26",
+    "position": [-18.5, 1.4, -12],
+    "interactionRadius": 3.0,
+    "meshType": "blocked_electrical_panel",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Por qué es riesgoso tener objetos frente a este centro de carga eléctrica?",
+      "opciones": [
+        "Interfiere con la señal de Wi-Fi de la nave",
+        "Impide el acceso rápido para desenergización en caso de choque o cortocircuito y obstaculiza el espacio de trabajo seguro",
+        "Disminuye el voltaje suministrado a las máquinas",
+        "No representa riesgo si no tocan el panel"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Eléctrico",
+    "preguntaControl": {
+      "pregunta": "¿Qué estándar de distancia y mantenimiento debe respetarse en paneles eléctricos?",
+      "opciones": [
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Despejar un espacio mínimo frontal de 1 metro y 76 cm de ancho, señalizar con franjas amarillo-negro 'Zona Eléctrica No Obstruir'",
+          "esOptima": true,
+          "justificacion": "Cumple con el espacio reglamentario de maniobra segura (Working Space) para el electricista."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Dejar las tarimas pero usar guantes dieléctricos de 1000V al intentar alcanzarlas",
+          "esOptima": false,
+          "justificacion": "No resuelve la imposibilidad de abrir la puerta del tablero en caso de incendio o choque."
+        },
+        {
+          "tipo": "Sustitución",
+          "texto": "Reemplazar los tambores metálicos por tambores plásticos",
+          "esOptima": false,
+          "justificacion": "El obstáculo físico sigue impidiendo el acceso a los breakers."
+        }
+      ]
+    },
+    "consecuencia": "Imposibilidad de corte de energía ante un electrocutado o conato de incendio en tableros.",
+    "medidaPreventiva": "Pintura de cajón de seguridad en piso y auditorías periódicas de orden y limpieza 5S.",
+    "retroalimentacion": "El espacio frente a tableros eléctricos debe permanecer despejado como mínimo 1 metro en todo momento."
+  },
+  {
+    "id": "PEL-014",
+    "nombre": "Prensa/Fresadora industrial sin guarda de seguridad ni interlock",
+    "categoria": "Mecánico",
+    "descripcion": "Máquina rotativa con bandas y poleas de transmisión en movimiento totalmente descubiertas, sin resguardo fijo ni parada de emergencia.",
+    "gravedad": "Crítica",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z4",
+    "zonaNombre": "Área de Maquinaria",
+    "normativa": "NOM-004-STPS-1999 / ISO 13849",
+    "position": [12, 1.1, 10],
+    "interactionRadius": 3.0,
+    "meshType": "unguarded_machine",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué condición crítica presenta el sistema de transmisión de la máquina?",
+      "opciones": [
+        "Falta de lubricación sintética en la banda",
+        "Partes móviles y poleas en rotación descubiertas sin guarda de protección ni dispositivo de paro",
+        "Motor eléctrico con velocidad no modulable",
+        "La máquina opera con resguardos correctos"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Mecánico",
+    "preguntaControl": {
+      "pregunta": "¿Qué medida de control jerárquica de ingeniería debe instalarse?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Instalar guarda perimetral fija con malla enclavada eléctricamente (interlock) que corte la energía si se abre la tapa",
+          "esOptima": true,
+          "justificacion": "Aísla mecánicamente el punto de atrapamiento e interrumpe la alimentación motriz si se intenta retirar."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Pegar una etiqueta de 'Peligro No Acercar la Mano' y continuar operando",
+          "esOptima": false,
+          "justificacion": "Una advertencia de papel no impide físicamente que la ropa o cabello sea succionado por la banda."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Usar guantes de tela holgados al acercarse a las poleas",
+          "esOptima": false,
+          "justificacion": "Los guantes aumentan gravemente el riesgo de enganche y arrastre de la mano hacia los rodillos."
+        }
+      ]
+    },
+    "consecuencia": "Amputación traumática de dedos/manos, atrapamiento y aplastamiento de miembros superiores.",
+    "medidaPreventiva": "Protección de todos los puntos de operación, transmisión y corte según NOM-004-STPS.",
+    "retroalimentacion": "Ninguna máquina o equipo debe operarse sin sus guardas de protección mecánica debidamente instaladas y funcionales."
+  },
+  {
+    "id": "PEL-015",
+    "nombre": "Líquidos inflamables almacenados junto a fuente de calor y chispas",
+    "categoria": "Químico",
+    "descripcion": "Bidones de solvente y pintura solventada sin cerrar ubicados a menos de 1.5 metros de una estación de desbaste que emite chispas continuas.",
+    "gravedad": "Crítica",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z4",
+    "zonaNombre": "Área de Maquinaria",
+    "normativa": "NOM-005-STPS-1998 / NFPA 30",
+    "position": [15, 0.6, 6],
+    "interactionRadius": 3.0,
+    "meshType": "flammables_near_ignition",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Cuál es la combinación de alto peligro químico e incendio en este puesto de trabajo?",
+      "opciones": [
+        "Falta de envases de color verde militar",
+        "Almacenamiento de sustancias químicas inflamables abiertas cerca de fuentes de ignición térmica y chispa",
+        "Exceso de solvente en relación al peso de las piezas",
+        "Condición segura de secado rápido"
+      ],
+      "respuestaCorrecta": 1
+    },
+    "tipoRiesgoCorrecto": "Químico",
+    "preguntaControl": {
+      "pregunta": "¿Qué control reduce el riesgo de incendio o explosión por vapores?",
+      "opciones": [
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Reubicar solventes a un gabinete de seguridad certificado resistente al fuego (FM/UL) dotado de arrestallamas y ventilación adecuada",
+          "esOptima": true,
+          "justificacion": "Confinamiento físico que separa vapores combustibles de las fuentes térmicas del taller."
+        },
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Pedir al esmerilador que apunte las chispas hacia el otro lado",
+          "esOptima": false,
+          "justificacion": "Los vapores inflamables son más pesados que el aire y viajan por el piso hacia la chispa."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Ponerse mascarilla de carbón activado",
+          "esOptima": false,
+          "justificacion": "Protege las vías respiratorias del operador pero no evita la deflagración o incendio en la nave."
+        }
+      ]
+    },
+    "consecuencia": "Explosión de vapores inflamables, incendio generalizado y quemaduras de tercer grado en el personal.",
+    "medidaPreventiva": "Almacenamiento en armarios certificados para inflamables y distancia mínima de 10 m de fuentes de ignición.",
+    "retroalimentacion": "Las sustancias inflamables deben resguardarse en recipientes de seguridad aprobados lejos de fuentes generadoras de calor o chispa."
+  },
+  {
+    "id": "PEL-016",
+    "nombre": "Carga excesiva y descentrada en montacargas obstruyendo visión",
+    "categoria": "Vehicular",
+    "descripcion": "Montacargas transportando tarima sobrecargada que bloquea el campo visual frontal del operador mientras avanza hacia adelante.",
+    "gravedad": "Alta",
+    "probabilidad": "Alta",
+    "puntos": 10,
+    "zonaId": "Z6",
+    "zonaNombre": "Zona de Carga y Descarga",
+    "normativa": "NOM-006-STPS-2014 / OSHA 1910.178",
+    "position": [10, 1.3, -12],
+    "interactionRadius": 3.6,
+    "meshType": "overloaded_forklift",
+    "preguntaIdentificacion": {
+      "pregunta": "¿Qué mala práctica de operación de montacargas se observa en la zona de carga?",
+      "opciones": [
+        "El operador conduce hacia adelante con la visión totalmente obstruida por una carga voluminosa",
+        "El montacargas utiliza gas LP en lugar de batería",
+        "Las horquillas están elevadas 10 cm del suelo",
+        "Transporte de carga según protocolo"
+      ],
+      "respuestaCorrecta": 0
+    },
+    "tipoRiesgoCorrecto": "Vehicular",
+    "preguntaControl": {
+      "pregunta": "¿Qué procedimiento operativo seguro debe acatar el montacarguista?",
+      "opciones": [
+        {
+          "tipo": "Controles administrativos",
+          "texto": "Desplazarse en reversa mirando en la dirección de la marcha, o fraccionar la carga para recuperar la visibilidad frontal total",
+          "esOptima": true,
+          "justificacion": "Asegura visión permanente del trayecto y previene colisiones contra estructuras o personas."
+        },
+        {
+          "tipo": "Controles de ingeniería",
+          "texto": "Acelerar para cruzar la nave lo más rápido posible",
+          "esOptima": false,
+          "justificacion": "Multiplica exponencialmente la energía de choque y tiempo de reacción."
+        },
+        {
+          "tipo": "Equipo de protección personal (EPP)",
+          "texto": "Colocarse lentes de aumento",
+          "esOptima": false,
+          "justificacion": "No soluciona la pared de cajas que bloquea el campo visual."
+        }
+      ]
+    },
+    "consecuencia": "Colisión contra peatones, racks o puertas industriales debido a punto ciego total frontal.",
+    "medidaPreventiva": "Conducir en reversa cuando la carga obstruya la visibilidad y mantener torreta estroboscópica y claxon en cruces.",
+    "retroalimentacion": "Cuando la carga impida la visión frontal, el operador debe conducir en marcha atrás asegurando visibilidad total."
+  }
+]
